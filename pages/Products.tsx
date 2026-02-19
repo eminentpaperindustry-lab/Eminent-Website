@@ -1,139 +1,137 @@
-import React, { useEffect, useRef } from 'react';
-import { Box, Recycle, Award, Globe, CheckCircle2 } from 'lucide-react';
-
-const useAnimateOnScroll = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return ref;
-};
+import React from "react";
+import { Box, Recycle, Award, Globe } from "lucide-react";
 
 const Products: React.FC = () => {
   const shades = [
-    { name: "NATURAL", color: "#8E795E" },
-    { name: "GOLDEN YELLOW", color: "#B8860B" },
-    { name: "CADBURY BROWN", color: "#4B3621" },
-    { name: "LIGHT TL", color: "#A0816C" },
-    { name: "DARK TL", color: "#3D2B1F" },
+    { name: "Natural", color: "#8E795E" },
+    { name: "Golden Yellow", color: "#B8860B" },
+    { name: "Cadbury Brown", color: "#4B3621" },
+    { name: "Light TL", color: "#A0816C" },
+    { name: "Dark TL", color: "#3D2B1F" },
   ];
 
   const specs = [
-    { label: "MEDIUM", value: "Fluting and Testliner" },
-    { label: "SHADES", value: "Natural, Golden Yellow, Cadbury Brown, Light TL, Dark TL" },
-    { label: "DECKLE", value: "160 Inches" },
-    { label: "GSM", value: "120 to 300" },
-    { label: "BF", value: "18 to 35" }
+    { label: "Medium", value: "Fluting and Testliner" },
+    { label: "Deckle", value: "160 Inches" },
+    { label: "GSM", value: "120 – 300" },
+    { label: "BF", value: "18 – 35" },
   ];
 
   const features = [
     {
-      title: "SAFE, SECURE & PROTECTIVE EXPORT-GRADE PACKAGING",
-      desc: "EXPORT-SAFE PROTECTIVE PACKAGING: EDGE BOARD PROTECTORS & STRETCH FILM WRAPPING",
-      icon: <Box size={24} />
+      title: "Export Grade Packaging",
+      desc: "Edge board protectors & stretch film wrapping",
+      icon: <Box size={20} />,
     },
     {
-      title: "JOINT-FREE ROLLS FOR UNIFORM STRENGTH",
-      desc: "JOINT-FREE SINGLE-BODY ROLLS: PROPERLY PASTED JOINTS, UNIFORM STRENGTH & ZERO WASTAGE",
-      icon: <Recycle size={24} />
+      title: "Joint-Free Rolls",
+      desc: "Uniform strength & zero wastage",
+      icon: <Recycle size={20} />,
     },
     {
-      title: "QUALITY ASSURANCE",
-      desc: "MAINTAINING CONSISTENCY IN BF, RCT, AND GSM MEASUREMENTS",
-      icon: <Award size={24} />
+      title: "Quality Assurance",
+      desc: "Consistent BF, RCT & GSM measurements",
+      icon: <Award size={20} />,
     },
     {
-      title: "ECO-FRIENDLY & SUSTAINABLE",
-      desc: "MADE FROM RENEWABLE, RECYCLABLE MATERIALS, COMBINING STRENGTH AND SUSTAINABILITY.",
-      icon: <Globe size={24} />
-    }
+      title: "Eco-Friendly",
+      desc: "Renewable & recyclable materials",
+      icon: <Globe size={20} />,
+    },
   ];
 
   return (
-    <div className="bg-[#EFE9E1] min-h-screen py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-          
-          {/* Left Column */}
-          <div className="flex-1 space-y-10 animate-on-scroll" ref={useAnimateOnScroll()}>
-            <h1 className="text-6xl md:text-7xl font-black text-[#1B4332] heading-serif">
-              Our Product
-            </h1>
-            
-            <div className="relative inline-block w-full max-w-lg">
-              <div className="rounded-[3rem] overflow-hidden border-[12px] border-white shadow-2xl">
-                <img 
-                  src="https://res.cloudinary.com/ddk4lshru/image/upload/v1770615625/WhatsApp-Image-2024-07-30-at-12.27.40-PM-1_1_1_1_fyplek.jpg" 
-                  alt="Industrial Machine" 
-                  className="w-full h-auto object-cover aspect-[4/3]"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800";
-                  }}
-                />
+    <section className="bg-[#F5F1EA] py-20">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* SECTION TITLE */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-bold text-[#1B4332]">
+            Our Product
+          </h1>
+        </div>
+
+        {/* GRID LAYOUT */}
+        <div className="grid lg:grid-cols-2 gap-14 items-start">
+
+          {/* LEFT SIDE */}
+          <div className="space-y-10">
+
+            {/* Image */}
+            <div className="rounded-3xl overflow-hidden shadow-xl">
+              <img
+                src="https://res.cloudinary.com/ddk4lshru/image/upload/v1770615625/WhatsApp-Image-2024-07-30-at-12.27.40-PM-1_1_1_1_fyplek.jpg"
+                alt="Fluting Paper Roll"
+                className="w-full object-cover aspect-[4/3]"
+              />
+            </div>
+
+            {/* Product Name */}
+            <h2 className="text-3xl font-semibold text-[#1B4332] border-b-2 border-[#C6A15B] inline-block pb-2">
+              Fluting / Test Liner Paper
+            </h2>
+
+            {/* Specs Card */}
+            <div className="bg-[#1B4332] text-white rounded-2xl p-8 shadow-lg">
+              <div className="space-y-6">
+                {specs.map((row, i) => (
+                  <div
+                    key={i}
+                    className="flex justify-between border-b border-white/20 pb-4 last:border-none"
+                  >
+                    <span className="uppercase text-sm tracking-wider text-white/70">
+                      {row.label}
+                    </span>
+                    <span className="font-semibold">
+                      {row.value}
+                    </span>
+                  </div>
+                ))}
               </div>
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-black text-[#1B4332] heading-serif underline decoration-[#937047] decoration-4 underline-offset-8">
-                Fluting/Test Liner Paper
-              </h2>
-            </div>
-
-            {/* Dark Green Spec Box */}
-            <div className="bg-[#1B4332] p-8 md:p-12 rounded-[3rem] text-white shadow-2xl space-y-8">
-              {specs.map((row, i) => (
-                <div key={i} className="flex justify-between items-start border-b border-white/10 pb-6 last:border-0 last:pb-0">
-                  <span className="text-white/60 font-black uppercase text-[10px] tracking-widest pt-1">{row.label} :</span>
-                  <span className="font-black text-right ml-8 text-base md:text-xl uppercase tracking-tight">{row.value}</span>
-                </div>
-              ))}
             </div>
           </div>
 
-          {/* Right Column */}
-          <div className="flex-1 lg:pt-20 space-y-16 animate-on-scroll" ref={useAnimateOnScroll()}>
-            {/* Shade Section */}
-            <div className="text-center lg:text-left space-y-10">
-              <h3 className="text-3xl font-black text-[#1B4332] heading-serif tracking-widest uppercase text-center">
+          {/* RIGHT SIDE */}
+          <div className="space-y-14">
+
+            {/* Shades */}
+            <div>
+              <h3 className="text-2xl font-semibold text-[#1B4332] mb-8">
                 Available Shades
               </h3>
-              <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+
+              <div className="flex flex-wrap gap-6">
                 {shades.map((s, idx) => (
-                  <div key={idx} className="flex flex-col items-center space-y-4">
-                    <div 
-                      className="w-24 h-14 md:w-32 md:h-18 rounded-xl shadow-lg border-2 border-white transform transition hover:scale-110"
+                  <div key={idx} className="flex flex-col items-center space-y-3">
+                    <div
+                      className="w-20 h-14 rounded-lg shadow-md border"
                       style={{ backgroundColor: s.color }}
                     />
-                    <span className="text-[#1B4332] font-black text-[10px] uppercase tracking-widest">{s.name}</span>
+                    <span className="text-sm font-medium text-[#1B4332] text-center">
+                      {s.name}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Feature Box */}
-            <div className="bg-white p-12 md:p-16 rounded-[4rem] shadow-2xl relative border border-gray-100">
-              <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[#1B4332] text-white px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest shadow-xl">
-                 Specification And Key Features
-              </div>
+            {/* Features Card */}
+            <div className="bg-white rounded-2xl p-10 shadow-lg">
+              <h3 className="text-xl font-semibold text-[#1B4332] mb-8">
+                Specifications & Key Features
+              </h3>
 
-              <div className="space-y-12 pt-6">
+              <div className="space-y-8">
                 {features.map((f, i) => (
-                  <div key={i} className="flex items-start space-x-6 group">
-                    <div className="p-4 border-2 border-[#1B4332]/10 text-[#1B4332] rounded-full group-hover:bg-[#1B4332] group-hover:text-white transition-all shrink-0">
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="p-3 bg-[#F1EEE8] text-[#1B4332] rounded-full">
                       {f.icon}
                     </div>
-                    <div className="space-y-1">
-                      <h4 className="font-black text-xs md:text-sm uppercase text-[#1B4332] tracking-widest">
+                    <div>
+                      <h4 className="font-semibold text-[#1B4332]">
                         {f.title}
                       </h4>
-                      <p className="text-[10px] text-gray-400 font-black uppercase leading-relaxed tracking-wider">
+                      <p className="text-sm text-gray-500 mt-1">
                         {f.desc}
                       </p>
                     </div>
@@ -142,11 +140,10 @@ const Products: React.FC = () => {
               </div>
             </div>
 
-           
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -20,9 +20,10 @@ const About: React.FC = () => {
     <div className="bg-white">
       {/* Hero Header - Unchanged */}
       <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-eco/100 z-10" />
+        <div className="absolute inset-0 bg-black/60 z-10" />
+
         <img 
-          src="https://images.unsplash.com/photo-1586075010633-247fe1bd6639?auto=format&fit=crop&q=80&w=1600" 
+          src="https://res.cloudinary.com/ddk4lshru/image/upload/Gemini_Generated_Image_x03y3ox03y3ox03y_3_dbwlin.png" 
           alt="Modern Factory" 
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -35,144 +36,107 @@ const About: React.FC = () => {
       </section>
 
       {/* Exact Image Layout Section */}
-      <section className="py-32 bg-[#FCF9F0] relative overflow-hidden animate-on-scroll" ref={useAnimateOnScroll()}>
-        <div className="max-w-7xl mx-auto px-4 relative">
-          
-          {/* Main Container */}
-          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-0">
-            
-            {/* Left Column Stats */}
-            <div className="lg:w-1/3 space-y-16 z-10">
-              {/* Stat 1 - Clients */}
-              <div className="flex items-start space-x-6 justify-end text-right">
-                <div className="order-2 lg:order-1">
-                  <h4 className="font-black text-[#1B4332] text-2xl md:text-3xl uppercase leading-tight">Trusted 750+<br/>Clients</h4>
-                  <p className="text-gray-600 text-sm mt-2 font-medium leading-relaxed">
-                    Serving a network of 750+ clients with consistent<br/>quality and service.
-                  </p>
-                </div>
-                <div className="order-1 lg:order-2 p-5 bg-white rounded-full shadow-lg border border-gray-100 flex-shrink-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5 3.5l-5-5m0 0l-5 5m5-5v12"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
+{/* Exact Image Layout Section */}
+<section className="py-32 bg-[#FCF9F0] relative overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 relative">
 
-              {/* Stat 2 - Eco-Friendly */}
-              <div className="flex items-start space-x-6 justify-end text-right">
-                <div className="order-2 lg:order-1">
-                  <h4 className="font-black text-[#1B4332] text-2xl md:text-3xl uppercase leading-tight">100% Eco-Friendly<br/>& Recyclable</h4>
-                  <p className="text-gray-600 text-sm mt-2 font-medium leading-relaxed">
-                    Green solutions through fully recyclable,<br/>environmentally responsible paper.
-                  </p>
-                </div>
-                <div className="order-1 lg:order-2 p-5 bg-white rounded-full shadow-lg border border-gray-100 flex-shrink-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
+    <div className="relative flex items-center justify-center min-h-[750px]">
 
-              {/* Stat 3 - Metric Tons */}
-              <div className="flex items-start space-x-6 justify-end text-right">
-                <div className="order-2 lg:order-1">
-                  <h4 className="font-black text-[#1B4332] text-2xl md:text-3xl uppercase leading-tight">312,000 Metric Tons<br/>Delivered</h4>
-                  <p className="text-gray-600 text-sm mt-2 font-medium leading-relaxed">
-                    Successfully delivering 312,000 MT of<br/>premium paper with reliability and<br/>efficiency. (2021–25)
-                  </p>
-                </div>
-                <div className="order-1 lg:order-2 p-5 bg-white rounded-full shadow-lg border border-gray-100 flex-shrink-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* Dotted Circle Ring */}
+      <div className="hidden lg:block absolute w-[650px] h-[650px] rounded-full border-2 border-dashed border-green-700 opacity-40"></div>
 
-            {/* Center Circular Image */}
-            <div className="lg:w-1/3 flex justify-center relative z-20">
-              <div className="relative w-[350px] h-[350px] md:w-[400px] md:h-[400px] rounded-full border-[12px] border-white shadow-2xl overflow-hidden">
-                <img 
-                  src="https://res.cloudinary.com/ddk4lshru/image/upload/Gemini_Generated_Image_x03y3ox03y3ox03y_3_dbwlin.png" 
-                  className="w-full h-full object-cover"
-                  alt="Eminent Paper Manufacturing"
-                />
-              </div>
-            </div>
+      {/* Center Circular Image */}
+      <div className="relative z-20 w-[420px] h-[420px] md:w-[520px] md:h-[520px] rounded-full border-[14px] border-white shadow-2xl overflow-hidden">
+        <img 
+          src="https://res.cloudinary.com/ddk4lshru/image/upload/Gemini_Generated_Image_x03y3ox03y3ox03y_3_dbwlin.png"
+          className="w-full h-full object-cover"
+          alt="Eminent Paper Manufacturing"
+        />
+      </div>
 
-            {/* Right Column Stats */}
-            <div className="lg:w-1/3 space-y-16 z-10">
-              {/* Stat 4 - Factory Area */}
-              <div className="flex items-start space-x-6">
-                <div className="p-5 bg-white rounded-full shadow-lg border border-gray-100 flex-shrink-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-black text-[#1B4332] text-2xl md:text-3xl uppercase leading-tight">Factory Area –<br/>52,000 Sq.m</h4>
-                  <p className="text-gray-600 text-sm mt-2 font-medium leading-relaxed">
-                    A world-class manufacturing hub built for<br/>precision, efficiency, and large-scale<br/>production.
-                  </p>
-                </div>
-              </div>
+      {/* TOP LEFT */}
+      <div className="hidden lg:block absolute top-10 left-32 text-right w-72">
+        <h4 className="font-black text-[#1B4332] text-2xl uppercase">Trusted 750+ Clients</h4>
+        <p className="text-gray-600 text-sm mt-2">
+          Serving a network of 750+ clients with consistent quality and service.
+        </p>
+      </div>
 
-              {/* Stat 5 - Production Capacity */}
-              <div className="flex items-start space-x-6">
-                <div className="p-5 bg-white rounded-full shadow-lg border border-gray-100 flex-shrink-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-black text-[#1B4332] text-2xl md:text-3xl uppercase leading-tight">Production Capacity<br/>– 7,000 MT/Month</h4>
-                  <p className="text-gray-600 text-sm mt-2 font-medium leading-relaxed">
-                    Supplying high-grade recycled kraft<br/>paper at scale.
-                  </p>
-                </div>
-              </div>
+      {/* TOP RIGHT */}
+      <div className="hidden lg:block absolute top-10 right-32 w-72">
+        <h4 className="font-black text-[#1B4332] text-2xl uppercase">Factory Area – 52,000 Sq.m</h4>
+        <p className="text-gray-600 text-sm mt-2">
+          A world-class manufacturing hub built for precision and efficiency.
+        </p>
+      </div>
 
-              {/* Stat 6 - Global Presence */}
-              <div className="flex items-start space-x-6">
-                <div className="p-5 bg-white rounded-full shadow-lg border border-gray-100 flex-shrink-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path>
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-black text-[#1B4332] text-2xl md:text-3xl uppercase leading-tight">Global Presence – 27<br/>Cities | 5 Countries</h4>
-                  <p className="text-gray-600 text-sm mt-2 font-medium leading-relaxed">
-                    Delivering premium solutions across 27<br/>cities and 5 countries.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* LEFT CENTER */}
+      <div className="hidden lg:block absolute left-10 top-1/2 -translate-y-1/2 text-right w-72">
+        <h4 className="font-black text-[#1B4332] text-2xl uppercase">100% Eco-Friendly & Recyclable</h4>
+        <p className="text-gray-600 text-sm mt-2">
+          Fully recyclable, environmentally responsible paper.
+        </p>
+      </div>
 
-          {/* Connecting Lines - Simple lines between stats */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 transform -translate-y-1/2 z-10">
-            <div className="flex justify-between">
-              {/* Line 1 */}
-              <div className="w-[30%] h-[1px] bg-gray-300 mt-8"></div>
-              {/* Line 2 */}
-              <div className="w-[30%] h-[1px] bg-gray-300 mt-8"></div>
-            </div>
-          </div>
+      {/* RIGHT CENTER */}
+      <div className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 w-72">
+        <h4 className="font-black text-[#1B4332] text-2xl uppercase">Production Capacity – 7,000 MT/Month</h4>
+        <p className="text-gray-600 text-sm mt-2">
+          Supplying high-grade recycled kraft paper at scale.
+        </p>
+      </div>
 
-        </div>
-      </section>
+      {/* BOTTOM LEFT */}
+      <div className="hidden lg:block absolute bottom-10 left-32 text-right w-72">
+        <h4 className="font-black text-[#1B4332] text-2xl uppercase">312,000 Metric Tons Delivered</h4>
+        <p className="text-gray-600 text-sm mt-2">
+          Delivering premium paper with reliability. (2021–25)
+        </p>
+      </div>
+
+      {/* BOTTOM RIGHT */}
+      <div className="hidden lg:block absolute bottom-10 right-32 w-72">
+        <h4 className="font-black text-[#1B4332] text-2xl uppercase">Global Presence – 27 Cities | 5 Countries</h4>
+        <p className="text-gray-600 text-sm mt-2">
+          Delivering premium solutions globally.
+        </p>
+      </div>
+
+    </div>
+
+    {/* Mobile Layout */}
+    <div className="lg:hidden mt-20 space-y-12 text-center">
+      <div>
+        <h4 className="font-black text-[#1B4332] text-xl uppercase">Trusted 750+ Clients</h4>
+        <p className="text-gray-600 text-sm mt-2">Serving a network of 750+ clients.</p>
+      </div>
+
+      <div>
+        <h4 className="font-black text-[#1B4332] text-xl uppercase">100% Eco-Friendly & Recyclable</h4>
+        <p className="text-gray-600 text-sm mt-2">Fully recyclable paper solutions.</p>
+      </div>
+
+      <div>
+        <h4 className="font-black text-[#1B4332] text-xl uppercase">312,000 Metric Tons Delivered</h4>
+        <p className="text-gray-600 text-sm mt-2">(2021–25)</p>
+      </div>
+
+      <div>
+        <h4 className="font-black text-[#1B4332] text-xl uppercase">Factory Area – 52,000 Sq.m</h4>
+      </div>
+
+      <div>
+        <h4 className="font-black text-[#1B4332] text-xl uppercase">Production Capacity – 7,000 MT/Month</h4>
+      </div>
+
+      <div>
+        <h4 className="font-black text-[#1B4332] text-xl uppercase">Global Presence – 27 Cities | 5 Countries</h4>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       {/* Section 1: OUR EXCLUSIVE PROPOSITION */}
       <section className="py-24 bg-white animate-on-scroll" ref={useAnimateOnScroll()}>
