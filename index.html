@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eminent Paper Industries LLP | Krafting a Sustainable Legacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kraft: {
+                            light: '#B48C62',
+                            DEFAULT: '#937047',
+                            dark: '#5C4033',
+                        },
+                        eco: {
+                            light: '#40916C',
+                            DEFAULT: '#1B4332',
+                            dark: '#081C15',
+                        },
+                        golden: {
+                            white: '#FCF9F0',
+                            accent: '#F3E5AB'
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'marquee': 'marquee 40s linear infinite',
+                        'marquee2': 'marquee2 40s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        marquee2: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body { font-family: 'Poppins', sans-serif; background-color: #FCF9F0; scroll-behavior: smooth; }
+        h1, h2, h3, .heading-serif { font-family: 'Playfair Display', serif; }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .animate-on-scroll { opacity: 0; }
+        .animate-on-scroll.visible { animation: fadeInUp 0.8s ease-out forwards; }
+
+        .glass-nav {
+            background: rgba(252, 249, 240, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+        
+        /* Smooth marquee */
+        .animate-marquee2 {
+            animation: marquee2 40s linear infinite;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="selection:bg-eco selection:text-white">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

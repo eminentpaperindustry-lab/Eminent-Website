@@ -1,0 +1,8 @@
+
+{
+  "name": "Eminent Paper Industries LLP",
+  "description": "Professional B2B website for a leading kraft paper manufacturer focused on sustainability, innovation, and quality.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
