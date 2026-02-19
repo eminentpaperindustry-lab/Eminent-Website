@@ -43,7 +43,7 @@ const About: React.FC = () => {
     <div className="relative flex items-center justify-center min-h-[750px]">
 
       {/* Dotted Circle Ring */}
-      <div className="hidden lg:block absolute w-[650px] h-[650px] rounded-full border-2 border-dashed border-green-700 opacity-40"></div>
+      <div className="hidden lg:block absolute w-[570px] h-[570px] rounded-full border-2 border-dashed border-green-700 opacity-40"></div>
 
       {/* Center Circular Image */}
       <div className="relative z-20 w-[420px] h-[420px] md:w-[520px] md:h-[520px] rounded-full border-[14px] border-white shadow-2xl overflow-hidden">
