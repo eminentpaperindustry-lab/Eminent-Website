@@ -17,7 +17,14 @@ import {
   Globe,
   MapPin,
   Package,
-  Building
+  Building,
+    ShieldCheck,
+  Clock,
+
+  Smartphone,
+  Bell,
+  Star,
+
 } from 'lucide-react';
 import LeadCaptureModal from '../components/LeadCaptureModal';
 
@@ -87,6 +94,18 @@ const Home: React.FC = () => {
     { name: "Anita Desai", company: "Kraft Solutions", quote: "Their 72-hour complaint resolution is not just a promise, they actually deliver." },
     { name: "Sunil Verma", company: "Industrial Kraft", quote: "Highly durable test liners with uniform strength. Zero wastage in our production line." }
   ];
+
+  const whyChooseUs = [
+  { title: "Superior Quality", icon: <ShieldCheck size={36} /> },
+  { title: "On-time Delivery", icon: <Truck size={36} /> },
+  { title: "72-Hour QC Complaint Resolution", icon: <Clock size={36} /> },
+  { title: "Dedicated CRM Support", icon: <Headphones size={36} /> },
+  { title: "Digital Order Tracking", icon: <Smartphone size={36} /> },
+  { title: "Auto-Alerts Dispatch & Delivery", icon: <Bell size={36} /> },
+  { title: "Commitment to Customer Service & Satisfaction", icon: <Star size={36} /> },
+  { title: "Sustainability & Green Initiatives", icon: <Leaf size={36} /> },
+];
+
 
   useEffect(() => {
     const timer = setInterval(() => setTestimonialIdx(prev => (prev + 2) % testimonials.length), 5000);
@@ -180,6 +199,48 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+
+{/* Why Choose Us Section */}
+<section className="py-28 bg-[#F5F1EA] animate-on-scroll" ref={useAnimateOnScroll()}>
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="text-center mb-20">
+      <h2 className="text-5xl font-black text-[#1B4332] heading-serif uppercase tracking-widest">
+        Why Choose Us
+      </h2>
+      <div className="w-28 h-1 bg-[#937047] mx-auto mt-6"></div>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-gray-200">
+
+      {whyChooseUs.map((item, i) => (
+        <div
+          key={i}
+          className="group p-12 text-center border border-gray-200 bg-white hover:bg-[#1B4332] transition-all duration-500 flex flex-col items-center justify-center space-y-6 hover:-translate-y-2"
+        >
+          <div className="text-[#1B4332] group-hover:text-[#937047] transition-colors duration-500">
+            {item.icon}
+          </div>
+
+          <h4 className="text-lg font-semibold text-[#1B4332] group-hover:text-white transition-colors duration-500 leading-snug">
+            {item.title}
+          </h4>
+        </div>
+      ))}
+
+    </div>
+
+    <div className="mt-20 text-center max-w-4xl mx-auto">
+      <p className="text-gray-600 text-lg leading-relaxed">
+        Driven by integrity, we prioritize customer needs to deliver high-quality eco-friendly kraft paper with advanced automation and world-class testing, ensuring unmatched service and reliability.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
       {/* Testimonials - Show 2 at a time as requested */}
       <section className="py-24 bg-[#1B4332] text-white animate-on-scroll" ref={useAnimateOnScroll()}>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -220,28 +281,77 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Clients Logo Marquee - Re-added as requested */}
-      <section className="py-24 bg-[#FCF9F0] animate-on-scroll" ref={useAnimateOnScroll()}>
-        <div className="max-w-7xl mx-auto px-8 mb-16 text-center">
-           <h3 className="text-5xl font-black heading-serif text-[#1B4332] uppercase tracking-widest inline-block border-b-8 border-[#937047] pb-2">Our Clients</h3>
-        </div>
-        <div className="relative flex overflow-x-hidden border-y border-gray-100 bg-white py-16">
-          <div className="animate-marquee whitespace-nowrap flex items-center">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, i) => (
-              <div key={i} className="mx-20 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform hover:scale-125 cursor-pointer">
-                <img src={`https://via.placeholder.com/250x100?text=CLIENT+LOGO+${item}`} alt="Client" className="h-16" />
-              </div>
-            ))}
+{/* Premium Luxury Clients Section */}
+<section className="py-28 relative overflow-hidden">
+  {/* Luxury Background */}
+  <div className="absolute inset-0 bg-gradient-to-r from-[#0F1F1C] via-[#1B4332] to-[#0F1F1C]"></div>
+  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(198,161,91,0.1)_0%,_transparent_80%)]"></div>
+  
+  <div className="relative max-w-7xl mx-auto px-6">
+
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h3 className="text-5xl font-black text-[#F5E2B8] uppercase tracking-widest">
+        Our Trusted Clients
+      </h3>
+      <div className="w-28 h-1 bg-[#C6A15B] mx-auto mt-5 rounded-full"></div>
+      <p className="text-[#F5E2B8]/80 mt-6 text-lg">
+        Trusted by leading packaging & kraft paper companies
+      </p>
+    </div>
+
+    {/* Logo Strip */}
+    <div className="relative w-full overflow-hidden py-12">
+
+      <div className="flex w-max animate-scroll gap-28 px-10 items-center">
+
+        {[
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484503/WhatsApp_Image_2026-01-08_at_4.45.03_PM_xauijd.jpg",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484502/WhatsApp_Image_2026-01-08_at_4.10.13_PM_a8tmfm.jpg",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484501/download_2_1_1_v2etru.jpg",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484501/Royal_Paper_Logo_1_2_1_1_izu84t.png",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484502/WhatsApp_Image_2026-01-08_at_4.05.37_PM_nlr2hm.jpg",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484502/WhatsApp_Image_2026-01-08_at_4.27.45_PM_tt8hj2.jpg",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484502/WhatsApp_Image_2026-01-08_at_4.13.17_PM_yyjx5f.jpg",
+
+          // duplicate for seamless loop
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484503/WhatsApp_Image_2026-01-08_at_4.45.03_PM_xauijd.jpg",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484502/WhatsApp_Image_2026-01-08_at_4.10.13_PM_a8tmfm.jpg",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484501/download_2_1_1_v2etru.jpg",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484501/Royal_Paper_Logo_1_2_1_1_izu84t.png",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484502/WhatsApp_Image_2026-01-08_at_4.05.37_PM_nlr2hm.jpg",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484502/WhatsApp_Image_2026-01-08_at_4.27.45_PM_tt8hj2.jpg",
+          "https://res.cloudinary.com/ddk4lshru/image/upload/v1771484502/WhatsApp_Image_2026-01-08_at_4.13.17_PM_yyjx5f.jpg",
+        ].map((logo, index) => (
+          <div key={index} className="flex items-center justify-center">
+            <img
+              src={logo}
+              alt="Client Logo"
+              className="h-24 object-contain bg-white p-4 rounded-2xl shadow-lg hover:scale-110 transition duration-500"
+            />
           </div>
-          <div className="absolute top-0 py-16 animate-marquee2 whitespace-nowrap flex items-center">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, i) => (
-              <div key={i} className="mx-20 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform hover:scale-125 cursor-pointer">
-                <img src={`https://via.placeholder.com/250x100?text=CLIENT+LOGO+${item}`} alt="Client" className="h-16" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        ))}
+
+      </div>
+    </div>
+
+  </div>
+
+  {/* Animation */}
+  <style>
+    {`
+      .animate-scroll {
+        animation: scroll 35s linear infinite;
+      }
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    `}
+  </style>
+</section>
+
+
 
       <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSuccess={() => alert("Thank you for your enquiry!")} />
     </div>
